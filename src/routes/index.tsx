@@ -55,7 +55,7 @@ const faqs = [
 
 function Smile() {
   return (
-    <svg viewBox="0 0 86 14" className="mx-auto mt-2 h-3 w-[86px]" fill="none" aria-hidden>
+    <svg viewBox="0 0 86 14" className="mx-auto mt-2 h-3 w-[120px]" fill="none" aria-hidden>
       <path d="M2 2 C 20 14, 66 14, 84 2" stroke="var(--veloe-cyan)" strokeWidth="4" strokeLinecap="round" />
     </svg>
   );

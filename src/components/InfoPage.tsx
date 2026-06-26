@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import logo from "@/assets/logo-veloe.png";
 
 /** Shared shell for the static info/legal pages (Sobre, Política, Termos). */
 export function InfoPage({
@@ -17,8 +18,8 @@ export function InfoPage({
         <div className="h-2.5 bg-veloe-purple" />
         <div className="bg-white shadow-[0_2px_8px_rgba(0,0,0,0.05)]">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-            <Link to="/" className="text-2xl font-black text-veloe-purple">
-              Efeito - AtivAr Tag
+            <Link to="/" aria-label="Início" className="text-veloe-purple">
+              <img src={logo} alt="Veloe" className="h-16 w-auto sm:h-20" />
             </Link>
             <Link to="/" className="text-sm font-bold text-veloe-purple underline">
               Voltar ao início
