@@ -1,0 +1,13 @@
+# Netlify deploy config for the TanStack Start (nitro) app.
+# The build uses nitro's `netlify` preset (see vite.config.ts), which emits:
+#   - static assets -> dist/         (the publish dir)
+#   - the SSR handler -> .netlify/functions-internal/server/  (auto-detected
+#     internal function, configured with path "/*" + preferStatic)
+# Serving the Cloudflare-preset output was what caused the "not found" error.
+
+[build]
+  command = "bun run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"

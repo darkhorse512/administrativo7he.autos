@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import favicon from "../assets/favicon.ico?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -77,14 +78,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Veloe — Ative sua tag com quem entende do assunto" },
-      { name: "description", content: "Passe por free flow e estacionamentos sem parar. Uma tag para 100% das rodovias do Brasil e mais de 2.600 estacionamentos." },
-      { property: "og:title", content: "Veloe — Ative sua tag com quem entende do assunto" },
-      { property: "og:description", content: "Passe por free flow e estacionamentos sem parar. Uma tag para todas as rodovias do Brasil." },
+      { title: "Tag para free flow e estacionamento" },
+      { name: "robots", content: "index, follow" },
+      { name: "description", content: "Tag aceita em 100% das rodovias do Brasil e em mais de 2.600 estacionamentos. Passe sem parar, sem filas e sem tickets." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Tag para free flow e estacionamento" },
+      { property: "og:description", content: "Tag aceita em todo o Brasil. Free flow, estacionamento e vale digital." },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Efeito Seguradora - AtivAr Tag | Ativação e Suporte para Tag de Pedágio" },
+      { name: "twitter:description", content: "Canal independente especializado em suporte e ativação de tags de pedágio e estacionamento. Atendimento via WhatsApp, seg. a sex. das 09h às 19h." },
     ],
     links: [
+      { rel: "icon", href: favicon, type: "image/x-icon" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },

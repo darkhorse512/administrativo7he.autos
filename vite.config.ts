@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Deploy target. The default preset is Cloudflare Workers, whose output
+  // (wrangler.json / .wrangler) Netlify cannot serve — that produced the
+  // "not found" error. `netlify` emits Netlify Functions + static assets.
+  nitro: { preset: "netlify" },
 });

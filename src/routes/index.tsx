@@ -5,6 +5,7 @@ import {
   ChevronDown, ShieldCheck, MapPin, Menu, X,
 } from "lucide-react";
 import heroTag from "@/assets/hero-tag.jpg";
+import logo from "@/assets/favicon.ico?url";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -73,7 +74,7 @@ function Heading({ children, className = "" }: { children: React.ReactNode; clas
 function TagLogo() {
   return (
     <a href="#top" aria-label="Início" className="text-primary">
-      <Tag className="h-7 w-7 -rotate-90" strokeWidth={2.2} />
+      <img src={logo} alt="Logo" className="h-8 w-8" width={32} height={32} />
     </a>
   );
 }
