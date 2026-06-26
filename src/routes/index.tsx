@@ -5,7 +5,7 @@ import {
   ChevronDown, ShieldCheck, MapPin, Menu, X,
 } from "lucide-react";
 import heroTag from "@/assets/hero-tag.jpg";
-import logo from "@/assets/logo-veloe.png";
+import logo from "@/assets/favicon.ico?url";
 import whatsappEspecialista from "@/assets/whatsapp-especialista.png";
 
 export const Route = createFileRoute("/")({
@@ -75,7 +75,7 @@ function Heading({ children, className = "" }: { children: React.ReactNode; clas
 function TagLogo() {
   return (
     <a href="#top" aria-label="Início" className="text-primary">
-      <img src={logo} alt="Veloe" className="h-16 w-auto sm:h-20" />
+      <img src={logo} alt="Veloe" className="h-10 w-10" />
     </a>
   );
 }
