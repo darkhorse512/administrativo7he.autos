@@ -36,43 +36,56 @@
   --color-cyan: var(--cyan-accent);
   --color-whatsapp: var(--whatsapp);
   --color-icon-bg: var(--icon-bg);
+  --color-veloe-purple: var(--veloe-purple);
+  --color-veloe-blue: var(--veloe-blue);
+  --color-veloe-cyan: var(--veloe-cyan);
+  --color-veloe-coral: var(--veloe-coral);
+  --color-veloe-violet: var(--veloe-violet);
+  --color-veloe-yellow: var(--veloe-yellow);
   --font-display: "Nunito", system-ui, sans-serif;
   --font-sans: "Nunito", system-ui, sans-serif;
 }
 
 :root {
   --radius: 0.875rem;
-  /* very light lavender page bg */
-  --background: oklch(0.975 0.012 285);
-  --foreground: oklch(0.2 0.1 280);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0.1 280);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0.1 280);
-  /* deep indigo headings */
-  --primary: oklch(0.22 0.12 280);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.95 0.02 285);
-  --secondary-foreground: oklch(0.22 0.12 280);
-  --muted: oklch(0.96 0.015 285);
-  --muted-foreground: oklch(0.45 0.05 280);
-  --accent: oklch(0.95 0.04 220);
-  --accent-foreground: oklch(0.22 0.12 280);
+  /* Veloe brand palette */
+  --veloe-purple: #190055;
+  --veloe-blue: #1d4ce9;
+  --veloe-cyan: #36dede;
+  --veloe-coral: #ff716b;
+  --veloe-violet: #833af0;
+  --veloe-yellow: #ffd247;
+
+  --background: #ffffff;
+  --foreground: var(--veloe-purple);
+  --card: #ffffff;
+  --card-foreground: var(--veloe-purple);
+  --popover: #ffffff;
+  --popover-foreground: var(--veloe-purple);
+  /* deep veloe-purple headings */
+  --primary: var(--veloe-purple);
+  --primary-foreground: #ffffff;
+  --secondary: color-mix(in srgb, var(--veloe-purple) 5%, white);
+  --secondary-foreground: var(--veloe-purple);
+  --muted: color-mix(in srgb, var(--veloe-purple) 4%, white);
+  --muted-foreground: color-mix(in srgb, var(--veloe-purple) 62%, white);
+  --accent: color-mix(in srgb, var(--veloe-blue) 8%, white);
+  --accent-foreground: var(--veloe-purple);
   --destructive: oklch(0.6 0.22 27);
-  --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.9 0.02 285);
-  --input: oklch(0.9 0.02 285);
-  --ring: oklch(0.5 0.22 270);
+  --destructive-foreground: #ffffff;
+  --border: color-mix(in srgb, var(--veloe-purple) 12%, white);
+  --input: color-mix(in srgb, var(--veloe-purple) 12%, white);
+  --ring: var(--veloe-blue);
   /* brand royal-blue CTA */
-  --cta: oklch(0.5 0.24 268);
-  --cta-foreground: oklch(0.99 0 0);
-  --brand: oklch(0.22 0.12 280);
-  --cyan-accent: oklch(0.78 0.13 195);
+  --cta: var(--veloe-blue);
+  --cta-foreground: #ffffff;
+  --brand: var(--veloe-purple);
+  --cyan-accent: var(--veloe-cyan);
   --whatsapp: oklch(0.62 0.16 145);
-  --icon-bg: oklch(0.92 0.04 200);
-  --gradient-top: linear-gradient(90deg, oklch(0.55 0.22 250), oklch(0.5 0.22 290), oklch(0.65 0.22 340));
-  --shadow-card: 0 8px 28px -14px oklch(0.22 0.12 280 / 0.18);
-  --shadow-soft: 0 14px 40px -18px oklch(0.22 0.12 280 / 0.25);
+  --icon-bg: color-mix(in srgb, var(--veloe-blue) 12%, white);
+  --gradient-top: linear-gradient(90deg, var(--veloe-blue), var(--veloe-violet), var(--veloe-coral));
+  --shadow-card: 0 8px 28px -14px color-mix(in srgb, var(--veloe-purple) 18%, transparent);
+  --shadow-soft: 0 14px 40px -18px color-mix(in srgb, var(--veloe-purple) 25%, transparent);
 }
 
 @layer base {

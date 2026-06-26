@@ -1,11 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   Tag, TrendingUp, Headphones, Car, Receipt, HandHeart,
   ChevronDown, ShieldCheck, MapPin, Menu, X,
 } from "lucide-react";
 import heroTag from "@/assets/hero-tag.jpg";
-import logo from "@/assets/favicon.ico?url";
+import logo from "@/assets/logo-veloe.png";
+import whatsappEspecialista from "@/assets/whatsapp-especialista.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -18,7 +19,7 @@ const nav = [
   { label: "Início", href: "#top" },
   { label: "Planos", href: "#planos" },
   { label: "Onde Usar", href: "#onde" },
-  { label: "Sobre Nós", href: "#sobre" },
+  { label: "Sobre Nós", href: "/sobre" },
   { label: "Contato", href: "#contato" },
 ];
 
@@ -55,7 +56,7 @@ const faqs = [
 function Smile() {
   return (
     <svg viewBox="0 0 86 14" className="mx-auto mt-2 h-3 w-[86px]" fill="none" aria-hidden>
-      <path d="M2 2 C 20 14, 66 14, 84 2" stroke="oklch(0.78 0.13 195)" strokeWidth="4" strokeLinecap="round" />
+      <path d="M2 2 C 20 14, 66 14, 84 2" stroke="var(--veloe-cyan)" strokeWidth="4" strokeLinecap="round" />
     </svg>
   );
 }
@@ -74,7 +75,7 @@ function Heading({ children, className = "" }: { children: React.ReactNode; clas
 function TagLogo() {
   return (
     <a href="#top" aria-label="Início" className="text-primary">
-      <img src={logo} alt="Logo" className="h-8 w-8" width={32} height={32} />
+      <img src={logo} alt="Veloe" className="h-16 w-auto sm:h-20" />
     </a>
   );
 }
@@ -97,7 +98,7 @@ function Index() {
               <a key={n.label} href={n.href} className="transition hover:text-cta">{n.label}</a>
             ))}
           </nav>
-          <a href={WA("Olá! Quero solicitar a minha tag agora.")} className="hidden rounded-full bg-cta px-6 py-2.5 text-sm font-bold text-cta-foreground shadow-[var(--shadow-card)] transition hover:opacity-90 md:inline-block">
+          <a href={WA("Olá! Quero solicitar a minha tag agora.")} target="_blank" rel="noopener noreferrer" className="hidden rounded-full bg-cta px-6 py-2.5 text-sm font-bold text-cta-foreground shadow-[var(--shadow-card)] transition hover:opacity-90 md:inline-block">
             Quero a tag
           </a>
           <button onClick={() => setMenu(!menu)} className="text-primary md:hidden" aria-label="Menu">
@@ -110,7 +111,7 @@ function Index() {
               {nav.map((n) => (
                 <a key={n.label} href={n.href} onClick={() => setMenu(false)}>{n.label}</a>
               ))}
-              <a href={WA("Olá! Quero solicitar a minha tag agora.")} className="mt-2 rounded-full bg-cta px-5 py-2.5 text-center text-cta-foreground">Quero a tag</a>
+              <a href={WA("Olá! Quero solicitar a minha tag agora.")} target="_blank" rel="noopener noreferrer" className="mt-2 rounded-full bg-cta px-5 py-2.5 text-center text-cta-foreground">Quero a tag</a>
             </nav>
           </div>
         )}
@@ -130,7 +131,7 @@ function Index() {
               Passe por free flow e estacionamentos sem parar e sem complicação. Uma tag para todas as rodovias do Brasil.
             </p>
             <div className="mt-7 flex items-center gap-6">
-              <a href={WA("Olá! Estou no site e gostaria de pedir a minha tag agora. Pode me orientar?")} className="rounded-full bg-cta px-7 py-3 text-sm font-bold text-cta-foreground shadow-[var(--shadow-card)] transition hover:opacity-90">
+              <a href={WA("Olá! Estou no site e gostaria de pedir a minha tag agora. Pode me orientar?")} target="_blank" rel="noopener noreferrer" className="rounded-full bg-cta px-7 py-3 text-sm font-bold text-cta-foreground shadow-[var(--shadow-card)] transition hover:opacity-90">
                 Quero a tag
               </a>
               <a href="#planos" className="text-sm font-bold text-primary underline underline-offset-4 transition hover:text-cta">
@@ -161,7 +162,7 @@ function Index() {
           <p className="mt-4 text-center text-muted-foreground">Tudo o que você precisa em um clique.</p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {quickAccess.map((q) => (
-              <a key={q.title} href={WA(q.msg)} className="group flex flex-col items-center rounded-2xl bg-card p-8 text-center shadow-[var(--shadow-card)] transition hover:-translate-y-0.5">
+              <a key={q.title} href={WA(q.msg)} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center rounded-2xl bg-card p-8 text-center shadow-[var(--shadow-card)] transition hover:-translate-y-0.5">
                 <span className="grid h-14 w-14 place-items-center rounded-full bg-icon-bg text-cta transition group-hover:scale-105">
                   <q.icon className="h-6 w-6" strokeWidth={2.2} />
                 </span>
@@ -187,7 +188,7 @@ function Index() {
             ))}
           </div>
           <div className="mt-12 text-center">
-            <a href={WA("Olá! Quero pedir a minha tag pelo WhatsApp. Pode me ajudar?")} className="inline-block rounded-full bg-cta px-7 py-3 text-sm font-bold text-cta-foreground shadow-[var(--shadow-card)] transition hover:opacity-90">
+            <a href={WA("Olá! Quero pedir a minha tag pelo WhatsApp. Pode me ajudar?")} target="_blank" rel="noopener noreferrer" className="inline-block rounded-full bg-cta px-7 py-3 text-sm font-bold text-cta-foreground shadow-[var(--shadow-card)] transition hover:opacity-90">
               Pedir pelo WhatsApp
             </a>
           </div>
@@ -202,7 +203,7 @@ function Index() {
             Estamos em 100% das rodovias com cobrança — com cancela ou Free Flow — e em mais de 2.600 estacionamentos de shoppings, aeroportos e muito mais.
           </p>
           <div className="mt-8 text-center">
-            <a href={WA("Olá! Quero ver o mapa de cobertura — rodovias e estacionamentos atendidos pela tag.")} className="inline-block rounded-full bg-cta px-7 py-3 text-sm font-bold text-cta-foreground shadow-[var(--shadow-card)] transition hover:opacity-90">
+            <a href={WA("Olá! Quero ver o mapa de cobertura — rodovias e estacionamentos atendidos pela tag.")} target="_blank" rel="noopener noreferrer" className="inline-block rounded-full bg-cta px-7 py-3 text-sm font-bold text-cta-foreground shadow-[var(--shadow-card)] transition hover:opacity-90">
               Ver mapa
             </a>
           </div>
@@ -235,7 +236,7 @@ function Index() {
           </div>
           <p className="mt-10 text-center text-sm text-muted-foreground">
             Não encontrou o que procurava?{" "}
-            <a href={WA("Olá! Tenho outras dúvidas, pode me atender?")} className="font-bold text-primary underline underline-offset-4">Acesse nosso FAQ</a>
+            <a href={WA("Olá! Tenho outras dúvidas, pode me atender?")} target="_blank" rel="noopener noreferrer" className="font-bold text-primary underline underline-offset-4">Acesse nosso FAQ</a>
           </p>
         </div>
       </section>
@@ -253,9 +254,9 @@ function Index() {
             </div>
           </div>
           <div className="space-y-3 text-sm md:text-right">
-            <a id="sobre" href="#" className="block font-semibold opacity-90 hover:opacity-100">Sobre Nós</a>
-            <a href="#" className="block font-semibold opacity-90 hover:opacity-100">Política de Privacidade</a>
-            <a href="#" className="block font-semibold opacity-90 hover:opacity-100">Termos de Uso</a>
+            <Link to="/sobre" className="block font-semibold opacity-90 hover:opacity-100">Sobre Nós</Link>
+            <Link to="/politica-de-privacidade" className="block font-semibold opacity-90 hover:opacity-100">Política de Privacidade</Link>
+            <Link to="/termos-de-uso" className="block font-semibold opacity-90 hover:opacity-100">Termos de Uso</Link>
           </div>
         </div>
         <div className="border-t border-white/10">
@@ -269,15 +270,16 @@ function Index() {
       {/* Floating WhatsApp */}
       <a
         href={WA("Olá! Quero falar com um especialista sobre a tag.")}
+        target="_blank"
+        rel="noopener noreferrer"
         aria-label="Fale com um especialista no WhatsApp"
-        className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-whatsapp py-2 pl-2 pr-4 text-xs font-extrabold leading-tight text-white shadow-[var(--shadow-soft)] transition hover:scale-105"
+        className="fixed bottom-5 right-5 z-50 transition hover:scale-105"
       >
-        <span className="grid h-10 w-10 place-items-center rounded-full bg-white text-whatsapp">
-          <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden>
-            <path d="M20.5 3.5A11 11 0 0 0 3.6 17.3L2 22l4.8-1.6A11 11 0 1 0 20.5 3.5Zm-8.5 18a9.5 9.5 0 0 1-4.8-1.3l-.3-.2-2.8.9.9-2.7-.2-.3A9.5 9.5 0 1 1 12 21.5Zm5.4-7.1c-.3-.1-1.7-.8-2-.9s-.5-.1-.7.1-.8.9-1 1.1-.4.2-.7 0a7.8 7.8 0 0 1-3.8-3.3c-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4a3 3 0 0 0-1 2.3c0 1.4 1 2.7 1.2 2.9s2.1 3.2 5.1 4.4c1.9.8 2.6.8 3.5.7.6 0 1.7-.7 2-1.4s.3-1.3.2-1.4-.3-.2-.6-.3Z"/>
-          </svg>
-        </span>
-        <span>Fale com um<br />ESPECIALISTA</span>
+        <img
+          src={whatsappEspecialista}
+          alt="Fale com um especialista no WhatsApp"
+          className="h-auto w-40 drop-shadow-xl sm:w-56"
+        />
       </a>
     </div>
   );
