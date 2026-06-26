@@ -1,0 +1,103 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand: var(--brand);
+  --color-cta: var(--cta);
+  --color-cta-foreground: var(--cta-foreground);
+  --color-cyan: var(--cyan-accent);
+  --color-whatsapp: var(--whatsapp);
+  --color-icon-bg: var(--icon-bg);
+  --font-display: "Nunito", system-ui, sans-serif;
+  --font-sans: "Nunito", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.875rem;
+  /* very light lavender page bg */
+  --background: oklch(0.975 0.012 285);
+  --foreground: oklch(0.2 0.1 280);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.1 280);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.1 280);
+  /* deep indigo headings */
+  --primary: oklch(0.22 0.12 280);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.95 0.02 285);
+  --secondary-foreground: oklch(0.22 0.12 280);
+  --muted: oklch(0.96 0.015 285);
+  --muted-foreground: oklch(0.45 0.05 280);
+  --accent: oklch(0.95 0.04 220);
+  --accent-foreground: oklch(0.22 0.12 280);
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.9 0.02 285);
+  --input: oklch(0.9 0.02 285);
+  --ring: oklch(0.5 0.22 270);
+  /* brand royal-blue CTA */
+  --cta: oklch(0.5 0.24 268);
+  --cta-foreground: oklch(0.99 0 0);
+  --brand: oklch(0.22 0.12 280);
+  --cyan-accent: oklch(0.78 0.13 195);
+  --whatsapp: oklch(0.62 0.16 145);
+  --icon-bg: oklch(0.92 0.04 200);
+  --gradient-top: linear-gradient(90deg, oklch(0.55 0.22 250), oklch(0.5 0.22 290), oklch(0.65 0.22 340));
+  --shadow-card: 0 8px 28px -14px oklch(0.22 0.12 280 / 0.18);
+  --shadow-soft: 0 14px 40px -18px oklch(0.22 0.12 280 / 0.25);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.01em; color: var(--color-primary); font-weight: 800; }
+}
+
+/* Decorative cyan smile under section headings */
+@utility heading-underline {
+  position: relative;
+  display: inline-block;
+}
+@utility heading-underline-after {
+  content: "";
+  display: block;
+  width: 86px;
+  height: 14px;
+  margin: 6px auto 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 86 14' fill='none'><path d='M2 2 C 20 14, 66 14, 84 2' stroke='%2330d5db' stroke-width='4' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+}
