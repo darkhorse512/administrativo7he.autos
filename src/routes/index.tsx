@@ -55,8 +55,8 @@ const faqs = [
 
 function Smile() {
   return (
-    <svg viewBox="0 0 86 14" className="mx-auto mt-2 h-3 w-[120px]" fill="none" aria-hidden>
-      <path d="M2 2 C 20 14, 66 14, 84 2" stroke="var(--veloe-cyan)" strokeWidth="4" strokeLinecap="round" />
+    <svg viewBox="0 0 120 24" className="mx-auto mt-3 h-4 w-28" fill="none" aria-hidden>
+      <path d="M4 4 C 30 28, 90 28, 116 4" stroke="var(--veloe-cyan)" strokeWidth="6" strokeLinecap="round" />
     </svg>
   );
 }
@@ -64,7 +64,7 @@ function Smile() {
 function Heading({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
     <div className={`text-center ${className}`}>
-      <h2 className="inline-block font-display text-3xl font-extrabold text-primary md:text-4xl">
+      <h2 className="font-display text-4xl font-black text-veloe-purple lg:text-5xl">
         {children}
       </h2>
       <Smile />
@@ -121,13 +121,18 @@ function Index() {
       <section className="relative">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-12 md:grid-cols-2 md:py-20">
           <div>
-            <h1 className="font-display text-4xl font-extrabold leading-[1.05] text-primary md:text-[3.25rem]">
-              Ative sua tag<br />
-              com quem entende<br />
-              do assunto.
+            <h1 className="mt-5 font-display text-5xl font-black leading-[1.05] text-veloe-purple lg:text-6xl">
+              Ative sua tag <br />
+              com quem entende <br />
+              do{" "}
+              <span className="relative inline-block">
+                assunto.
+                <svg viewBox="0 0 200 20" className="absolute -bottom-3 left-0 h-3 w-full text-veloe-cyan" fill="none" aria-hidden>
+                  <path d="M2 12 C 60 22, 140 22, 198 8" stroke="currentColor" strokeWidth="6" strokeLinecap="round" />
+                </svg>
+              </span>
             </h1>
-            <Smile />
-            <p className="mt-6 max-w-md text-base text-muted-foreground md:text-[17px]">
+            <p className="mt-7 max-w-md text-lg text-veloe-purple/80">
               Passe por free flow e estacionamentos sem parar e sem complicação. Uma tag para todas as rodovias do Brasil.
             </p>
             <div className="mt-7 flex items-center gap-6">
@@ -138,9 +143,9 @@ function Index() {
                 Ver planos
               </a>
             </div>
-            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm font-bold text-primary">
-              <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-cta" /> 100% das rodovias</div>
-              <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-cta" /> +2.600 estacionamentos</div>
+            <div className="mt-10 flex flex-wrap gap-6 text-sm font-semibold text-veloe-purple/80">
+              <span className="flex items-center gap-2"><ShieldCheck className="h-5 w-5 text-veloe-cyan" /> 100% das rodovias</span>
+              <span className="flex items-center gap-2"><MapPin className="h-5 w-5 text-veloe-cyan" /> +2.600 estacionamentos</span>
             </div>
           </div>
           <div>
